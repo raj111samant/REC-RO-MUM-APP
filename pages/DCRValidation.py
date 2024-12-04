@@ -21,10 +21,15 @@ def ProcessUserInput(userInput):
         resultMarkdownText += f"| :{color}[{result[0]}] | :{color}[{result[1]}] |\n"
     return resultMarkdownText
 
-st.set_page_config(
-    page_title="DCRValidation App",
-    page_icon="✅",
-)
+def WideSpaceDefault():
+    st.set_page_config(layout="wide", page_title="DCRValidation App", page_icon="✅")
+    hide_st_style = """
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    """
+    st.markdown(hide_st_style, unsafe_allow_html=True)
+
+WideSpaceDefault()
 
 st.title("DCRValidation App")
 st.sidebar.success("Select a page above.")

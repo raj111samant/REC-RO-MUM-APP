@@ -23,11 +23,13 @@ def ProcessUserInput(userInput):
 
 def WideSpaceDefault():
     st.set_page_config(layout="wide", page_title="DCRValidation App", page_icon="✅")
-    hide_st_style = """
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    """
-    st.markdown(hide_st_style, unsafe_allow_html=True)
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 WideSpaceDefault()
 

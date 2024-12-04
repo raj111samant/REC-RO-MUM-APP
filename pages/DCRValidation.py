@@ -6,7 +6,7 @@ prevUserInput = ""
 def ProcessUserInput(userInput):
     global prevUserInput
     prevUserInput = userInput
-    userInput = userInput.replace(" ", "").replace("\r\n", ",").replace("\n", ",")
+    userInput = userInput.replace(" ", ",").replace(" ", "").replace("\r\n", ",").replace("\n", ",")
     seen = set()
     userInputList = [x for x in [y for y in userInput.split(",")] if not (x == "" or x in seen or seen.add((x,)))]
     resultList = [Utils.ValidateDCR(modSerNum) for modSerNum in userInputList]

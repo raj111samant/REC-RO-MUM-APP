@@ -1,5 +1,6 @@
 import streamlit as st
 from utils import Utils
+import doc
 
 prevUserInput = ""
 
@@ -26,7 +27,7 @@ def WideSpaceDefault():
     st.markdown(
         """
         <style>
-        ._container_gzau3_1, ._viewerBadge_nim44_23, ._profileContainer_gzau3_53, .st-emotion-cache-h4xjwg {
+        ._container_gzau3_1, ._viewerBadge_nim44_23, .st-emotion-cache-h4xjwg, ._profileContainer_gzau3_53 {
             display: none;
         }
         </style>

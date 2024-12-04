@@ -1,6 +1,5 @@
 import streamlit as st
 from utils import Utils
-import doc
 
 prevUserInput = ""
 

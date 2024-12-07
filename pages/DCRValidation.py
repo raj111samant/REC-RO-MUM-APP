@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 from utils import Utils
 
-@st.cache_data(show_spinner=False)
+@st.cache_data(show_spinner=False, ttl=60)
 def DCRValidationCache(modSerNum):
     return Utils.ValidateDCR(modSerNum)
 

@@ -29,24 +29,26 @@ WideSpaceDefault()
 
 st.title("DCRValidation App")
 st.sidebar.success("Select a page above.")
-st.markdown("""---""")
+#st.markdown("""---""")
 
 st.header("🚨 Note")
 st.markdown(
 """
 This app verifies DCR for input Module Serial Number via solardcrportal.nise.res.in 🌐
-
-User input should contain module serial number(s) separated by comma or newline.
+User input should contain module serial number(s) separated by comma or newline or space.
 Example:
 * ```
   SerialNumber1,SerialNumber2,SerialNumber3
 * ```
   SerialNumber1
   SerialNumber2
+* ```
+  SerialNumber1 SerialNumber2 SerialNumber3
 """
+
 )
 
-st.markdown("""---""")
+#st.markdown("""---""")
 st.header("✍ Input")
 with st.form('chat_input_form'):
     col1, col2 = st.columns([5,1]) 
@@ -60,7 +62,7 @@ with st.form('chat_input_form'):
     with col2:
         submitButtonPressed = st.form_submit_button('Validate')
 
-st.markdown("""---""")
+#st.markdown("""---""")
 st.header("🏆 Result")
 
 if (submitButtonPressed or (prevUserInput != userInput)) and (userInput not in ["", None]):

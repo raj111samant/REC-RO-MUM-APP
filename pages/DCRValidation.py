@@ -123,5 +123,5 @@ with <img src="https://em-content.zobj.net/source/skype/289/red-heart_2764-fe0f.
 """
 st.write(ft, unsafe_allow_html=True)
 
-
+WideSpaceDefault()
 # NSMP24091468370, NSMP24091468383, NSMP24091468381, 26240523C3284085, SE540240924065, WS08249037680588

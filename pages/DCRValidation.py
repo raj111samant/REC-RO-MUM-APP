@@ -77,37 +77,51 @@ if (submitButtonPressed or (prevUserInput != userInput)) and (userInput not in [
             resultMarkdownText = ProcessUserInput(userInput)
             st.write(resultMarkdownText + "\n" + f"⏱ Time taken {timer.ElapsedTime():.6f} secs")
 
-hide_streamlit_style = """
-                <style>
-                div[data-testid="stToolbar"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stDecoration"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                div[data-testid="stStatusWidget"] {
-                visibility: hidden;
-                height: 0%;
-                position: fixed;
-                }
-                #MainMenu {
-                visibility: hidden;
-                height: 0%;
-                }
-                header {
-                visibility: hidden;
-                height: 0%;
-                }
-                footer {
-                visibility: hidden;
-                height: 0%;
-                }
-                </style>
-                """
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+ft = """
+<style>
+a:link , a:visited{
+color: #BFBFBF;  /* theme's text color hex code at 75 percent brightness*/
+background-color: transparent;
+text-decoration: none;
+}
+
+a:hover,  a:active {
+color: #0283C3; /* theme's primary color*/
+background-color: transparent;
+text-decoration: underline;
+}
+
+#page-container {
+  position: relative;
+  min-height: 10vh;
+}
+
+footer{
+    visibility:hidden;
+}
+
+.footer {
+position: relative;
+left: 0;
+top:230px;
+bottom: 0;
+width: 100%;
+background-color: transparent;
+color: #808080; /* theme's text color hex code at 50 percent brightness*/
+text-align: left; /* you can replace 'left' with 'center' or 'right' if you want*/
+}
+</style>
+
+<div id="page-container">
+
+<div class="footer">
+<p style='font-size: 0.875em;'>Made with <a style='display: inline; text-align: left;' href="https://streamlit.io/" target="_blank">Streamlit</a><br 'style= top:3px;'>
+with <img src="https://em-content.zobj.net/source/skype/289/red-heart_2764-fe0f.png" alt="heart" height= "10"/><a style='display: inline; text-align: left;' href="https://github.com/sape94" target="_blank"> by sape94</a></p>
+</div>
+
+</div>
+"""
+st.write(ft, unsafe_allow_html=True)
+
 
 # NSMP24091468370, NSMP24091468383, NSMP24091468381, 26240523C3284085, SE540240924065, WS08249037680588

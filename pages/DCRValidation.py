@@ -23,7 +23,13 @@ def ProcessUserInput(userInput):
 
 def WideSpaceDefault():
     st.set_page_config(layout="wide", page_title="DCRValidation App", page_icon="✅")
-
+    hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            </style>
+            """
+    st.markdown(hide_streamlit_style, unsafe_allow_html=True) 
 
 WideSpaceDefault()
 
@@ -70,16 +76,5 @@ if (submitButtonPressed or (prevUserInput != userInput)) and (userInput not in [
         with Utils.Timer() as timer:
             resultMarkdownText = ProcessUserInput(userInput)
             st.write(resultMarkdownText + "\n" + f"⏱ Time taken {timer.ElapsedTime():.6f} secs")
-
-
-st.markdown(
-    """
-    <style>
-    ._container_gzau3_1, ._viewerBadge_nim44_23, .st-emotion-cache-h4xjwg, ._profileContainer_gzau3_53 {
-        display: none;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True)
 
 # NSMP24091468370, NSMP24091468383, NSMP24091468381, 26240523C3284085, SE540240924065, WS08249037680588

@@ -1,6 +1,7 @@
 import streamlit as st
 import streamlit.components.v1 as components
 from utils import Utils
+import streamlit_analytics2 as streamlit_analytics
 
 @st.cache_data(show_spinner=False, ttl=60)
 def DCRValidationCache(modSerNum):
@@ -99,9 +100,10 @@ def RenderFormAction():
                 resultTableElem.write(resultMarkdownText + "\n" + f"⏱ Time taken {timer.ElapsedTime():.6f} secs")
 
 InitSessionState()
-RenderForm()
 ApplyPageLayoutSettings()
-RenderFormAction()
+with streamlit_analytics.track():
+    RenderForm()
+    RenderFormAction()
 
 # NSMP24091468370, NSMP24091468383, NSMP24091468381, 26240523C3284085, SE540240924065, WS08249037680588
 
